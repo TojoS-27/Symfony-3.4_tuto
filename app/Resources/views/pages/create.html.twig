@@ -1,1 +1,37 @@
-<h1>CREATE POST</h1>
+{% extends 'base.html.twig' %}
+
+{% block title %}Add{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-sm-8 offset-1">
+			<h1>
+				{% if editMode %}
+					EDIT POST
+				{% else %}
+					NEW POST
+				{% endif %}
+			</h1>
+		</div>
+	</div>
+	<div class="container">
+		<div class="form-group">
+			{{ form_start(formAjout) }}
+				{{ form_row(formAjout.title, {'attr':{'placeholder':"Titre de l'article", 
+				'class':"form-control" }}) }}
+				{{ form_row(formAjout.description, {'attr':{'placeholder':"Description de l'article", 
+				'class':"form-control" }}) }}
+				{{ form_row(formAjout.category, {'attr':{'placeholder':"Catégorie de l'article", 
+				'class':"form-control"}}) }}
+				<button type="submit" class="btn btn-success">
+					{% if editMode %}
+						Save Edit
+					{% else %}
+						Create Post
+					{% endif %}
+				</button>
+			{{ form_end (formAjout) }}
+		</div>
+	</div>
+
+{% endblock %}

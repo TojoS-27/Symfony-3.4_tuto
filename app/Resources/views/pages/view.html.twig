@@ -1,1 +1,15 @@
-<h1>VIEW SINGLE POST</h1>
+{% extends 'base.html.twig' %}
+
+{% block  title %} View-one{% endblock %}
+
+{% block  body %}
+	<h1>View one</h1>
+	<div class="container">
+		<h2>{{ post.title }}</h2>
+		<p>Description: {{ post.description }}</p>
+		<p>Category: {{ post.category }} </p>
+		<a href="{{ path('show_posts_route') }}" class="btn btn-primary">
+			Back
+		</a>
+	</div>
+{% endblock %}
