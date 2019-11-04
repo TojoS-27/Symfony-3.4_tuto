@@ -18,9 +18,7 @@ class PostController extends Controller
         // replace this example code with whatever you need
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findAll();
         return $this->render('pages/index.html.twig', ['posts' => $posts]);
-
-    }
-
+	}
     /**
      * @Route("/create", name="create_posts_route")
      * @Route("/edit/{id}", name="edit_posts_route")
