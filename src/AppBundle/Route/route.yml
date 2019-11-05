@@ -1,0 +1,4 @@
+get_budgets:
+    path: /budget
+    defaults: { _controller: AppBundle:Budget:getBudgets }
+
